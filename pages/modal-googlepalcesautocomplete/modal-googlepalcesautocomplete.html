@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Location</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="ios-close-circle-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <google-places-autocomplete (callback)="detail($event[0])" key="AIzaSyB5zQFBDTaV6JPtVnyYmNcN4022wJrePLs"></google-places-autocomplete>
+</ion-content>

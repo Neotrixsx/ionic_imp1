@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Feedback</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list padding-top>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="myemail" type="email" (keyup)="checkemail($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Feedback</ion-label>
+      <ion-textarea fz-elastic maxlength="200" [(ngModel)]="myfeedback"></ion-textarea>
+    </ion-item>
+    <button ion-button block (click)="sendFeedback()">Send Feedback</button>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      Note:
+    </ion-card-header>
+    <ion-card-content>
+      Please use your valid email address so we can reply to it.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+

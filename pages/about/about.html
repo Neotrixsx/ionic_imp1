@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>About Us</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <div class="imgcenter">
+      <img src="assets/img/logo.jpg" />
+    </div>
+    <ion-card-content>
+      <ion-card-title text-center>
+        test Apps
+      </ion-card-title>
+      <p text-center>
+        We are specialized on hybrid mobile Application development. We develop lot of application for our private clients and our
+        users.
+      </p>
+      <hr>
+      <button ion-button block color="dark" clear (click)="openPage('http://appadmin.test.com/privacypolicy/fattofit/privacypolicy.html')">Our Privacy Policy</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let item of newsData">
+      <ion-thumbnail item-start>
+        <img src="{{item.appimage}}">
+      </ion-thumbnail>
+      <h2>{{item.appname}}</h2>
+      <p>{{item.appdescription}}</p>
+      <button ion-button clear item-end (click)="playstore(item.appstorelink)">View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

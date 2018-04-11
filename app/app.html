@@ -1,0 +1,52 @@
+<ion-menu [content]="content" id="sidemenu">
+    <ion-header>
+      <ion-toolbar>
+        <img [src]="userimg" (error)="errorHandler($event)">
+        <p class="title">{{fname}}</p>
+        <p class="info">{{state}}</p>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item menuClose icon-left (click)="openPage('HomePage')">
+          <ion-icon item-start name="ios-home-outline"></ion-icon>
+          Home
+        </ion-item>
+        <ion-item menuClose icon-left (click)="openPage('DietChartPage')" (tap)="onAdsClick()">
+          <ion-icon item-start name="ios-nutrition-outline"></ion-icon>
+          14 Days Diet Plan
+        </ion-item>
+        <ion-item menuClose icon-left (click)="openPage('BmiCalculatorPage')" (tap)="onAdsClick()">
+          <ion-icon item-start name="ios-heart-outline"></ion-icon>
+          BMI Calculator
+        </ion-item>
+        <!-- <ion-item menuClose icon-left (click)="openPage('BlogPage')">
+          <ion-icon item-start name="ios-paper-outline"></ion-icon>
+          Blog
+        </ion-item> -->
+        <ion-item menuClose icon-left (click)="shareviaemail()">
+          <ion-icon item-start name="ios-mail-outline"></ion-icon>
+          Email to Developer
+        </ion-item>
+        <ion-item menuClose icon-left (click)="openmarket()">
+          <ion-icon  item-start name="ios-star-outline"></ion-icon>
+          Rate Us
+        </ion-item>
+        <ion-item menuClose icon-left (click)="openPage('SettingPage')" (tap)="onAdsClick()">
+          <ion-icon item-start name="ios-settings-outline"></ion-icon>
+          Settings
+        </ion-item>
+        <ion-item menuClose icon-left (click)="openPage('AboutPage')" (tap)="onAdsClick()">
+          <ion-icon item-start name="ios-contacts-outline"></ion-icon>
+          About Us
+        </ion-item>
+        <ion-item menuClose icon-left detail-none>
+          <ion-icon item-start name="ios-log-out-outline"></ion-icon>
+          Close Menu
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  <ion-nav id="nav" #content [root]="rootPage" swipeBackEnable="false"></ion-nav>
+  

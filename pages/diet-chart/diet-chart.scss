@@ -1,0 +1,14 @@
+page-diet-chart {
+  ion-content {
+    .label {
+      @include size_width_height(null, 30px);
+      @include padding-all(5px, null, null, null);
+    }
+    span {
+      border: 1px solid #000;
+      border-radius: 4px;
+      @include padding-all(2px, 10px, 2px, 10px);
+      @include margin-all(null, 10px, null, null);
+    }
+  }
+}

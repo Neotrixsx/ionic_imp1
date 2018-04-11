@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label> Notification</ion-label>
+      <ion-toggle text-right [(ngModel)]="notification" (ionChange)="notificationnotify()"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>ID</ion-label>
+      <ion-input text-right [(ngModel)]="deviceid" disabled="inputDisabled" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>First Name</ion-label>
+      <ion-input text-right [(ngModel)]="fname" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Last Name</ion-label>
+      <ion-input text-right [(ngModel)]="lname" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>States</ion-label>
+      <!-- <ion-input text-right [(ngModel)]="state" disabled="inputDisabled" (click)="openModal('ModalGooglepalcesautocompletePage')" type="text"></ion-input> -->
+      <ion-input text-right [(ngModel)]="state" [readonly]="true" (click)="openModal('ModalGooglepalcesautocompletePage')" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input text-right [(ngModel)]="email" (keyup)="checkemail($event)" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select text-right [(ngModel)]="genderinfo" (ionChange)="onGenderChange($event)">
+        <ion-option value="male">Male</ion-option>
+        <ion-option value="female">Female</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="useretting()">Save</button>
+  <hr>
+  <button ion-button block color="dark" clear (click)="openPage('http://appadmin.test.com/privacypolicy/fattofit/privacypolicy.html')">Our Privacy Policy</button>
+</ion-content>

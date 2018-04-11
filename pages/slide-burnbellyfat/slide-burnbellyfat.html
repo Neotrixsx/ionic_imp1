@@ -1,0 +1,33 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title>Burn Belly fat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let item of newsData; let i = index">
+      <ion-card class="slide-card">
+        <ion-card-content>
+          <p class="tipsinfo">{{item.datatips}}</p>
+          <p class="pagination">{{i + 1}}/30</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="accent-color">
+    <ion-buttons left>
+      <button ion-button icon-only color="royal" (click)="slidePrevInfo()">
+        <ion-icon name="ios-arrow-back-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-buttons right>
+      <button ion-button icon-only color="royal" (click)="slideNextInfo()">
+        <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

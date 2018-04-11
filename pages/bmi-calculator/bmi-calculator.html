@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      BMI Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Height Unit</ion-label>
+      <ion-select [(ngModel)]="hunit" (ionChange)="onHeightChange($event)">
+        <ion-option value="meters">Meters</ion-option>
+        <ion-option value="inches">Inches</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Enter your Height</ion-label>
+      <ion-input limit-to="3" [(ngModel)]="userheight" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Weight Unit</ion-label>
+      <ion-select [(ngModel)]="wunit" (ionChange)="onWeightChange($event)">
+        <ion-option value="kilograms">Kilograms</ion-option>
+        <ion-option value="pounds">Pounds</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Enter your Weight</ion-label>
+      <ion-input limit-to="3" [(ngModel)]="userweight" type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="calculateBMI()">Calculate</button>
+  <ion-card>
+    <ion-card-header>
+      Your BMI is: {{bmivalue}}
+    </ion-card-header>
+    <ion-card-content>
+      This means you are: {{bmiinfo}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

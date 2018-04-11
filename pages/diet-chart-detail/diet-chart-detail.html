@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{titleno}}'th Day Diet plan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let item of newsData">
+    <ion-card>
+      <ion-card-header>
+        <h3>Breakfast :</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{item.Breakfast}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h3>Snack :</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{item.Snack}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h3>Lunch :</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{item.Lunch}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <h3>Dinner :</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{item.Dinner}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

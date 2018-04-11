@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      14 days Diet Chart
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of newsData; let i = index" (click)="itemSelected(i)">
+      <span>{{item.day}}</span> {{item.dayspel}} day diet plan
+    </button>
+  </ion-list>
+</ion-content>
